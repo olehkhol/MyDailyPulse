@@ -12,27 +12,15 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            App(items = makeItems())
+            App()
         }
     }
-}
-
-private fun makeItems(): List<Pair<String, String>> {
-    val platform = Platform().also {
-        it.logSystemInfo()
-    }
-
-    return listOf(
-        Pair("Operation System", "${platform.osName} ${platform.osVersion}"),
-        Pair("Device", platform.deviceModel),
-        Pair("Density", platform.density.toString()),
-    )
 }
 
 @Preview
 @Composable
 private fun AppPreview() {
     MaterialTheme {
-        App(items = makeItems())
+        App()
     }
 }
