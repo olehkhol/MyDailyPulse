@@ -1,5 +1,5 @@
 [versions]
-agp = "8.3.2"
+agp = "8.5.2"
 android-compileSdk = "34"
 android-minSdk = "24"
 android-targetSdk = "34"
@@ -17,8 +17,9 @@ kotlin = "2.0.10"
 kotlinx-coroutines = "1.9.0-RC"
 lifecycleViewmodelKtx = "2.8.4"
 ktor = "3.0.0-wasm2"
-io-coil-kt = "2.7.0"
-io-coil3-kt = "3.0.0-alpha08"
+coil = "2.7.0"
+coil3 = "3.0.0-alpha10"
+coil3-network = "3.0.0-alpha08"
 
 [libraries]
 androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
@@ -47,12 +48,12 @@ ktor-client-serialization = { group = "io.ktor", name = "ktor-client-serializati
 ktor-client-content-negotiation = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktor" }
 ktor-serialization-kotlinx-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
 ktor-client-java = { group = "io.ktor", name = "ktor-client-java", version.ref = "ktor" }
-coil-base = { module = "io.coil-kt:coil-base", version.ref = "io-coil-kt" }
-coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "io-coil-kt" }
-coil-svg = { module = "io.coil-kt:coil-svg", version.ref = "io-coil-kt" }
-coil-test = { module = "io.coil-kt:coil-test", version.ref = "io-coil-kt" }
-coil3-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "io-coil3-kt" }
-coil3-network-ktor = { module = "io.coil-kt.coil3:coil-network-ktor", version.ref = "io-coil3-kt" }
+coil-base = { module = "io.coil-kt:coil-base", version.ref = "coil" }
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
+coil-svg = { module = "io.coil-kt:coil-svg", version.ref = "coil" }
+coil-test = { module = "io.coil-kt:coil-test", version.ref = "coil" }
+coil3-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil3" }
+coil3-network-ktor = { module = "io.coil-kt.coil3:coil-network-ktor", version.ref = "coil3-network" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
