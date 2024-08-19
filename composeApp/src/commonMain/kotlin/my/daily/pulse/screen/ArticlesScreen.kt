@@ -13,12 +13,8 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
@@ -35,6 +31,7 @@ import coil3.compose.LocalPlatformContext
 import coil3.request.ImageRequest
 import my.daily.pulse.articles.Article
 import my.daily.pulse.articles.ArticlesViewModel
+import my.daily.pulse.composable.Toolbar
 
 @Composable
 fun ArticlesScreen(
@@ -45,7 +42,13 @@ fun ArticlesScreen(
     val articlesState = articlesViewModel.articleState.collectAsState()
 
     Column(modifier = modifier) {
-        AppBar(onAboutButtonClick)
+        Toolbar(
+            titleText = "Articles",
+            actionIcon = Icons.Outlined.Info,
+            contentDescription = "About Device Button",
+            modifier = Modifier.fillMaxWidth(),
+            onActionClick = onAboutButtonClick,
+        )
 
         with(articlesState.value) {
             if (loading) {
@@ -55,24 +58,6 @@ fun ArticlesScreen(
             } else error?.let { ErrorMessage(it) }
         }
     }
-}
-
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-private fun AppBar(
-    onAboutButtonClick: () -> Unit,
-) {
-    TopAppBar(
-        title = { Text(text = "Articles") },
-        actions = {
-            IconButton(onClick = onAboutButtonClick) {
-                Icon(
-                    imageVector = Icons.Outlined.Info,
-                    contentDescription = "About Device Button",
-                )
-            }
-        }
-    )
 }
 
 @Composable
