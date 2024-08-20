@@ -14,9 +14,9 @@ kotlin {
             jvmTarget.set(JvmTarget.JVM_11)
         }
     }
-    
+
     jvm()
-    
+
     listOf(
         iosX64(),
         iosArm64(),
@@ -27,15 +27,17 @@ kotlin {
             isStatic = true
         }
     }
-    
+
     sourceSets {
         commonMain.dependencies {
             // put your Multiplatform dependencies here
             implementation(libs.kotlinx.coroutines.core)
+
+            implementation(libs.androidx.lifecycle.viewmodel)
         }
 
         androidMain.dependencies {
-            implementation(libs.androidx.lifecycle.viewmodel.ktx)
+
         }
 
         jvmMain.dependencies {
