@@ -13,7 +13,7 @@ import kotlinx.coroutines.withContext
 class ArticlesViewModel : ViewModel() {
 
     private val _articlesState = MutableStateFlow(ArticlesState(loading = true))
-    val articleState = _articlesState.asStateFlow()
+    val articlesState = _articlesState.asStateFlow()
 
     init {
         getArticle()
@@ -21,9 +21,13 @@ class ArticlesViewModel : ViewModel() {
 
     private fun getArticle() {
         viewModelScope.launch {
-            val fetchedArticles = fetchArticles()
+            delay(2000)
 
-            delay(500)
+            _articlesState.emit(ArticlesState(error = "Something went wrong"))
+
+            delay(2000)
+
+            val fetchedArticles = fetchArticles()
 
             _articlesState.emit(ArticlesState(articles = fetchedArticles))
         }

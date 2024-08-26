@@ -39,7 +39,7 @@ fun ArticlesScreen(
     articlesViewModel: ArticlesViewModel,
     modifier: Modifier = Modifier,
 ) {
-    val articlesState = articlesViewModel.articleState.collectAsState()
+    val articlesState = articlesViewModel.articlesState.collectAsState()
 
     Column(modifier = modifier) {
         Toolbar(
