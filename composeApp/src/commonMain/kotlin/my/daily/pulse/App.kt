@@ -16,7 +16,6 @@ import coil3.request.CachePolicy
 import coil3.request.crossfade
 import coil3.util.DebugLogger
 import my.daily.pulse.articles.ArticlesViewModel
-import my.daily.pulse.screen.ArticlesScreen
 import okio.FileSystem
 
 @OptIn(ExperimentalCoilApi::class)
@@ -32,11 +31,7 @@ fun App(disableDiskCache: Boolean = false) {
             modifier = Modifier.fillMaxSize(),
             color = MaterialTheme.colorScheme.background
         ) {
-            ArticlesScreen(
-                onAboutButtonClick = {},
-                articlesViewModel = ArticlesViewModel(),
-                modifier = Modifier.fillMaxSize(),
-            )
+            AppScaffold(articlesViewModel = ArticlesViewModel())
         }
     }
 }

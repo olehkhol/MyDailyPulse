@@ -3,7 +3,7 @@ package my.daily.pulse
 import java.awt.Toolkit
 import java.util.logging.Logger
 
-actual class Platform() {
+actual class Platform {
 
     actual val osName: String
         get() = "Java ${System.getProperty("java.version")}"

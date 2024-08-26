@@ -4,7 +4,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.HorizontalDivider
@@ -14,12 +13,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import my.daily.pulse.Platform
 import my.daily.pulse.composable.Toolbar
+import androidx.compose.foundation.lazy.items
 
 @Composable
 fun AboutScreen(
     onUpButtonClick: () -> Unit,
-    items: List<Pair<String, String>>,
     modifier: Modifier = Modifier,
 ) {
     Column(modifier = modifier) {
@@ -30,20 +30,16 @@ fun AboutScreen(
             modifier = Modifier.fillMaxWidth(),
             onActionClick = onUpButtonClick,
         )
-        ContentView(
-            items = items,
-            modifier = Modifier.fillMaxWidth(),
-        )
+        ContentView(modifier = Modifier.fillMaxWidth())
     }
 }
 
 @Composable
-fun ContentView(
-    items: List<Pair<String, String>>,
-    modifier: Modifier = Modifier,
-) {
+fun ContentView(modifier: Modifier = Modifier) {
+    val items = makeItems()
+
     LazyColumn(modifier = modifier) {
-        items(items) { row: Pair<String, String> ->
+        items(items) { row ->
             RowView(
                 title = row.first,
                 subtitle = row.second,
@@ -51,6 +47,17 @@ fun ContentView(
             )
         }
     }
+}
+
+private fun makeItems(): List<Pair<String, String>> {
+    val platform = Platform()
+    platform.logSystemInfo()
+
+    return listOf(
+        Pair("Operating System", "${platform.osName} ${platform.osVersion}"),
+        Pair("Device", platform.deviceModel),
+        Pair("Density", platform.density.toString())
+    )
 }
 
 @Composable
