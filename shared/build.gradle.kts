@@ -33,6 +33,7 @@ kotlin {
         commonMain.dependencies {
             // put your Multiplatform dependencies here
             implementation(libs.kotlinx.coroutines.core)
+            implementation(libs.kotlinx.datetime)
 
             implementation(libs.androidx.lifecycle.viewmodel)
 
