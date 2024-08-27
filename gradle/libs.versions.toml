@@ -23,6 +23,7 @@ ktor = "3.0.0-wasm2"
 coil = "2.7.0"
 coil3 = "3.0.0-alpha10"
 coil3-network = "3.0.0-alpha08"
+sqlDelight="2.0.2"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -63,6 +64,12 @@ coil-svg = { module = "io.coil-kt:coil-svg", version.ref = "coil" }
 coil-test = { module = "io.coil-kt:coil-test", version.ref = "coil" }
 coil3-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil3" }
 coil3-network-ktor = { module = "io.coil-kt.coil3:coil-network-ktor", version.ref = "coil3-network" }
+
+sql-coroutines = { module = "app.cash.sqldelight:coroutines-extensions", version.ref = "sqlDelight" }
+sql-common = { module = "app.cash.sqldelight:primitive-adapters", version.ref = "sqlDelight" }
+sql-android = { module = "app.cash.sqldelight:android-driver", version.ref = "sqlDelight" }
+sql-jvm = { module = "app.cash.sqldelight:sqlite-driver", version.ref = "sqlDelight" }
+sql-ios = { module = "app.cash.sqldelight:native-driver", version.ref = "sqlDelight" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

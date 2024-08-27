@@ -42,15 +42,20 @@ kotlin {
             implementation(libs.ktor.client.core)
             implementation(libs.ktor.client.content.negotiation)
             implementation(libs.ktor.serialization.kotlinx.json)
+
+            implementation(libs.sql.coroutines)
         }
         androidMain.dependencies {
             implementation(libs.ktor.client.android)
+            implementation(libs.sql.android)
         }
         jvmMain.dependencies {
             implementation(libs.ktor.client.java)
+            implementation(libs.sql.jvm)
         }
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)
+            implementation(libs.sql.ios)
         }
     }
 }
