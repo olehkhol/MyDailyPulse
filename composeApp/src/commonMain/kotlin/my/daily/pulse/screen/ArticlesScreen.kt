@@ -32,12 +32,15 @@ import coil3.request.ImageRequest
 import my.daily.pulse.articles.Article
 import my.daily.pulse.articles.ArticlesViewModel
 import my.daily.pulse.composable.Toolbar
+import org.koin.compose.viewmodel.koinViewModel
+import org.koin.core.annotation.KoinExperimentalAPI
 
+@OptIn(KoinExperimentalAPI::class)
 @Composable
 fun ArticlesScreen(
     onAboutButtonClick: () -> Unit,
-    articlesViewModel: ArticlesViewModel,
     modifier: Modifier = Modifier,
+    articlesViewModel: ArticlesViewModel = koinViewModel<ArticlesViewModel>(),
 ) {
     val articlesState = articlesViewModel.articlesState.collectAsState()
 

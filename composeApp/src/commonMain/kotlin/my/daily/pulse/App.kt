@@ -31,7 +31,7 @@ fun App(disableDiskCache: Boolean = false) {
             modifier = Modifier.fillMaxSize(),
             color = MaterialTheme.colorScheme.background
         ) {
-            AppScaffold(articlesViewModel = ArticlesViewModel())
+            AppScaffold()
         }
     }
 }
