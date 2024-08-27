@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.androidLibrary)
     id("co.touchlab.skie") version "0.8.4"
     kotlin("plugin.serialization") version "2.0.20"
+    alias(libs.plugins.sql)
 }
 
 kotlin {
@@ -69,5 +70,13 @@ android {
     }
     defaultConfig {
         minSdk = libs.versions.android.minSdk.get().toInt()
+    }
+}
+
+sqldelight {
+    databases {
+        create(name = "DailyPulseDatabase") {
+            packageName.set("my.daily.pulse.db")
+        }
     }
 }
