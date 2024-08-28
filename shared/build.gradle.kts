@@ -48,6 +48,7 @@ kotlin {
         }
         androidMain.dependencies {
             implementation(libs.ktor.client.android)
+            implementation(libs.koin.android)
             implementation(libs.sql.android)
         }
         jvmMain.dependencies {
