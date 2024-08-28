@@ -39,11 +39,7 @@ struct ArticlesScreen: View {
     var body: some View {
         VStack {
             AppBar()
-            
-            if viewModel.articlesState.loading {
-                Loader()
-            }
-            
+                        
             if let error = viewModel.articlesState.error {
                 ErrorMessage(message: error)
             }
@@ -95,12 +91,6 @@ struct ArticleImageView: View {
                 .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .trailing)
                 .foregroundStyle(.gray)
         }
-    }
-}
-
-struct Loader: View {
-    var body: some View {
-        ProgressView()
     }
 }
 
