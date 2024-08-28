@@ -17,9 +17,9 @@ class ArticlesViewModel(
         getArticle()
     }
 
-    private fun getArticle() {
+    fun getArticle(forceFetch: Boolean = false) {
         viewModelScope.launch {
-            val fetchedArticles = useCase.getArticles()
+            val fetchedArticles = useCase.getArticles(forceFetch)
 
             _articlesState.emit(ArticlesState(articles = fetchedArticles))
         }
