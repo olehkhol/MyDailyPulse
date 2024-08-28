@@ -13,6 +13,7 @@
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
 		8917F2342C73740800582FCB /* AboutListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8917F2332C73740800582FCB /* AboutListView.swift */; };
 		8917F2362C737CDD00582FCB /* AboutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8917F2352C737CDD00582FCB /* AboutScreen.swift */; };
+		899AE3C32C7FDC870014A064 /* SourcesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899AE3C22C7FDC870014A064 /* SourcesScreen.swift */; };
 		89B0620C2C78B3140078513E /* ArticlesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B0620B2C78B3140078513E /* ArticlesScreen.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8917F2332C73740800582FCB /* AboutListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutListView.swift; sourceTree = "<group>"; };
 		8917F2352C737CDD00582FCB /* AboutScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutScreen.swift; sourceTree = "<group>"; };
+		899AE3C22C7FDC870014A064 /* SourcesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesScreen.swift; sourceTree = "<group>"; };
 		89B0620B2C78B3140078513E /* ArticlesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesScreen.swift; sourceTree = "<group>"; };
 		AB3632DC29227652001CCB65 /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +94,7 @@
 				8917F2352C737CDD00582FCB /* AboutScreen.swift */,
 				8917F2332C73740800582FCB /* AboutListView.swift */,
 				89B0620B2C78B3140078513E /* ArticlesScreen.swift */,
+				899AE3C22C7FDC870014A064 /* SourcesScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				899AE3C32C7FDC870014A064 /* SourcesScreen.swift in Sources */,
 				89B0620C2C78B3140078513E /* ArticlesScreen.swift in Sources */,
 				8917F2342C73740800582FCB /* AboutListView.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
