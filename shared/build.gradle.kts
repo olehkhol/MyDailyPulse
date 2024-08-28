@@ -44,7 +44,7 @@ kotlin {
             implementation(libs.ktor.client.content.negotiation)
             implementation(libs.ktor.serialization.kotlinx.json)
 
-            implementation(libs.sql.coroutines)
+            implementation(libs.sql.common)
         }
         androidMain.dependencies {
             implementation(libs.ktor.client.android)
