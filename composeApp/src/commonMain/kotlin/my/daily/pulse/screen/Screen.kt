@@ -1,6 +1,7 @@
 package my.daily.pulse.screen
 
 enum class Screens(val route: String) {
-    ARTICLES("reminders"),
+    ARTICLES("articles"),
+    SOURCES("sources"),
     ABOUT_DEVICE("about-device"),
  }

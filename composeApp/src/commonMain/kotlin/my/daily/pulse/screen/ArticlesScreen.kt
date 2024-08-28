@@ -2,6 +2,7 @@ package my.daily.pulse.screen
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -11,11 +12,16 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.outlined.List
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.pullrefresh.PullRefreshIndicator
 import androidx.compose.material.pullrefresh.pullRefresh
 import androidx.compose.material.pullrefresh.rememberPullRefreshState
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -34,13 +40,13 @@ import coil3.request.ImageRequest
 import my.daily.pulse.articles.application.Article
 import my.daily.pulse.articles.presentation.ArticlesState
 import my.daily.pulse.articles.presentation.ArticlesViewModel
-import my.daily.pulse.composable.Toolbar
 import org.koin.compose.viewmodel.koinViewModel
 import org.koin.core.annotation.KoinExperimentalAPI
 
-@OptIn(KoinExperimentalAPI::class, ExperimentalMaterialApi::class)
+@OptIn(KoinExperimentalAPI::class, ExperimentalMaterialApi::class, ExperimentalMaterial3Api::class)
 @Composable
 fun ArticlesScreen(
+    onSourcesButtonClick: () -> Unit,
     onAboutButtonClick: () -> Unit,
     modifier: Modifier = Modifier,
     articlesViewModel: ArticlesViewModel = koinViewModel<ArticlesViewModel>(),
@@ -52,12 +58,25 @@ fun ArticlesScreen(
     )
 
     Column(modifier = modifier) {
-        Toolbar(
-            titleText = "Articles",
-            actionIcon = Icons.Outlined.Info,
-            contentDescription = "About Device Button",
+        TopAppBar(
+            title = { Text(text = "Articles") },
+            navigationIcon = {
+                Row {
+                    IconButton(onClick = onSourcesButtonClick) {
+                        Icon(
+                            imageVector = Icons.AutoMirrored.Outlined.List,
+                            contentDescription = "Source List Button",
+                        )
+                    }
+                    IconButton(onClick = onAboutButtonClick) {
+                        Icon(
+                            imageVector = Icons.Outlined.Info,
+                            contentDescription = "About Device Button",
+                        )
+                    }
+                }
+            },
             modifier = Modifier.fillMaxWidth(),
-            onActionClick = onAboutButtonClick,
         )
 
         Box(modifier = modifier.weight(1f).pullRefresh(pullRefreshState)) {
