@@ -40,6 +40,7 @@ fun AppNavHost(
         composable(Screens.ARTICLES.route) {
             ArticlesScreen(
                 onAboutButtonClick = { navController.navigate(Screens.ABOUT_DEVICE.route) },
+                modifier = Modifier.fillMaxSize(),
             )
         }
         composable(Screens.ABOUT_DEVICE.route) {
