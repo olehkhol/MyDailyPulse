@@ -23,6 +23,7 @@ ktor = "3.0.0-wasm2"
 coil = "2.7.0"
 coil3 = "3.0.0-alpha10"
 coil3-network = "3.0.0-alpha08"
+skie = "0.8.4"
 sqlDelight = "2.0.2"
 
 [libraries]
@@ -77,4 +78,6 @@ androidLibrary = { id = "com.android.library", version.ref = "agp" }
 jetbrainsCompose = { id = "org.jetbrains.compose", version.ref = "compose-plugin" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+skie = { id = "co.touchlab.skie", version.ref = "skie" }
 sql = { id = "app.cash.sqldelight", version.ref = "sqlDelight" }
