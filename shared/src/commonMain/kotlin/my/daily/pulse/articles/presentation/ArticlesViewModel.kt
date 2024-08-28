@@ -15,7 +15,7 @@ class ArticlesViewModel(
     val articlesState = _articlesState.asStateFlow()
 
     init {
-        getArticle()
+        getArticles()
     }
 
     fun refresh() {
@@ -28,7 +28,7 @@ class ArticlesViewModel(
         }
     }
 
-    private fun getArticle(forceFetch: Boolean = false) {
+    private fun getArticles(forceFetch: Boolean = false) {
         viewModelScope.launch {
             val fetchedArticles = useCase.getArticles(forceFetch)
 

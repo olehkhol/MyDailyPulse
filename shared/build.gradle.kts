@@ -78,6 +78,7 @@ sqldelight {
     databases {
         create(name = "DailyPulseDatabase") {
             packageName.set("my.daily.pulse.db")
+            verifyMigrations.set(true)
         }
     }
 }

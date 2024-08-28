@@ -5,6 +5,14 @@ CREATE TABLE Article (
     imageUrl TEXT
 );
 
+CREATE TABLE Source (
+    id TEXT NOT NULL PRIMARY KEY,
+    name TEXT NOT NULL,
+    desc TEXT NOT NULL,
+    lang TEXT NOT NULL,
+    country TEXT NOT NULL
+);
+
 insertArticle:
 INSERT INTO Article(title, desc, date, imageUrl)
 VALUES(?, ?, ?, ?);
@@ -16,3 +24,13 @@ FROM Article;
 removeAllArticles:
 DELETE FROM Article;
 
+insertSource:
+INSERT INTO Source(id, name, desc, lang, country)
+VALUES(?, ?, ?, ?, ?);
+
+removeAllSources:
+DELETE FROM Source;
+
+selectAllSources:
+SELECT Source.*
+FROM Source;
