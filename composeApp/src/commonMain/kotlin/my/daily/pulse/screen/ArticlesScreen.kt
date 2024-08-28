@@ -31,9 +31,9 @@ import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import coil3.compose.LocalPlatformContext
 import coil3.request.ImageRequest
-import my.daily.pulse.articles.Article
-import my.daily.pulse.articles.ArticlesState
-import my.daily.pulse.articles.ArticlesViewModel
+import my.daily.pulse.articles.application.Article
+import my.daily.pulse.articles.presentation.ArticlesState
+import my.daily.pulse.articles.presentation.ArticlesViewModel
 import my.daily.pulse.composable.Toolbar
 import org.koin.compose.viewmodel.koinViewModel
 import org.koin.core.annotation.KoinExperimentalAPI

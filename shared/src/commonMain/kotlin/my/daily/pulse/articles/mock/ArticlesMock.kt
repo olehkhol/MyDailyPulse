@@ -1,4 +1,6 @@
-package my.daily.pulse.articles
+package my.daily.pulse.articles.mock
+
+import my.daily.pulse.articles.application.Article
 
 val mockArticles = listOf(
     Article(

@@ -15,7 +15,6 @@ import coil3.network.ktor.KtorNetworkFetcherFactory
 import coil3.request.CachePolicy
 import coil3.request.crossfade
 import coil3.util.DebugLogger
-import my.daily.pulse.articles.ArticlesViewModel
 import okio.FileSystem
 
 @OptIn(ExperimentalCoilApi::class)

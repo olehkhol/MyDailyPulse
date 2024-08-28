@@ -1,4 +1,4 @@
-package my.daily.pulse.articles
+package my.daily.pulse.articles.application
 
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
@@ -6,6 +6,8 @@ import kotlinx.datetime.TimeZone
 import kotlinx.datetime.daysUntil
 import kotlinx.datetime.toLocalDateTime
 import kotlinx.datetime.todayIn
+import my.daily.pulse.articles.data.ArticleRaw
+import my.daily.pulse.articles.data.ArticlesRepository
 import kotlin.math.abs
 
 class ArticlesUseCase(private val repo: ArticlesRepository) {

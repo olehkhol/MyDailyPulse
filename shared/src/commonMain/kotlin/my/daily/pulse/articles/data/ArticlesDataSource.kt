@@ -1,4 +1,4 @@
-package my.daily.pulse.articles
+package my.daily.pulse.articles.data
 
 import my.daily.pulse.db.DailyPulseDatabase
 

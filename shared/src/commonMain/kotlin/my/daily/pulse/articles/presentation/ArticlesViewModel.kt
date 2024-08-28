@@ -1,10 +1,11 @@
-package my.daily.pulse.articles
+package my.daily.pulse.articles.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import my.daily.pulse.articles.application.ArticlesUseCase
 
 class ArticlesViewModel(
     private val useCase: ArticlesUseCase

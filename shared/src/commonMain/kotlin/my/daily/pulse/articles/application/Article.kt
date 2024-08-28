@@ -1,4 +1,4 @@
-package my.daily.pulse.articles
+package my.daily.pulse.articles.application
 
 data class Article(
     val title: String,
