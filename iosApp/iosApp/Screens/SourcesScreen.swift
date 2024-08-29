@@ -36,35 +36,40 @@ struct SourcesScreen: View {
         
     @ObservedObject private(set) var viewModel: SourcesViewModelWrapper
     
+    @Environment(\.dismiss)
+    private var dismiss
+
     var body: some View {
-        VStack {
-            SourcesAppBar()
-            
-            if let error = viewModel.sourcesState.error {
-                SourcesErrorMessage(message: error)
-            }
-            
-            if(!viewModel.sourcesState.sources.isEmpty) {
-                ScrollView {
-                    LazyVStack(spacing: 10) {
-                        ForEach(viewModel.sourcesState.sources, id: \.self) { source in
-                            SourceImageView(source: source)
+        NavigationStack {
+            VStack {
+                if let error = viewModel.sourcesState.error {
+                    SourcesErrorMessage(message: error)
+                }
+                
+                if(!viewModel.sourcesState.sources.isEmpty) {
+                    ScrollView {
+                        LazyVStack(spacing: 10) {
+                            ForEach(viewModel.sourcesState.sources, id: \.self) { source in
+                                SourceImageView(source: source)
+                            }
                         }
+                    }
+                }
+            }
+            .navigationTitle("Sources")
+            .toolbar{
+                ToolbarItem(placement: .primaryAction) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Text("Done")
+                            .bold()
                     }
                 }
             }
         }.onAppear {
             self.viewModel.startObserving()
         }
-    }
-}
-
-struct SourcesAppBar: View {
-    
-    var body: some View {
-        Text("Sources")
-            .font(.largeTitle)
-            .fontWeight(.bold)
     }
 }
 
@@ -78,7 +83,7 @@ struct SourcesErrorMessage: View {
 }
 
 struct SourceImageView: View {
-    var source: Source
+    var source: Source_
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {

@@ -3,6 +3,7 @@ import Shared
 
 struct ContentView: View {
     
+    @State private var shouldOpenSources = false
     @State private var shouldOpenAbout = false
     
     var body: some View {
@@ -11,6 +12,17 @@ struct ContentView: View {
         NavigationStack {
             articlesScreen
                 .toolbar {
+                    ToolbarItem {
+                        Button {
+                            shouldOpenSources = true
+                        } label: {
+                            Label("Sources", systemImage: "list.bullet")
+                                .labelStyle(.titleAndIcon)
+                        }
+                        .popover(isPresented: $shouldOpenSources) {
+                            SourcesScreen(viewModel: .init())
+                        }
+                    }
                     ToolbarItem {
                         Button {
                             shouldOpenAbout = true
